@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Saddy 🎂</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff8fb, #f4edff, #fff4df);
+  color: #30263b;
+}
+
+.page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.card {
+  width: min(92vw, 430px);
+  min-height: 650px;
+  border: 1px solid rgba(255,255,255,.8);
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(14px);
+  border-radius: 30px;
+  box-shadow: 0 18px 55px rgba(77,54,95,.16);
+  padding: 38px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 18px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.s1 { top: 8%; left: 10%; }
+.s2 { top: 18%; right: 10%; animation-delay: .8s; }
+.s3 { bottom: 14%; left: 12%; animation-delay: 1.2s; }
+.s4 { bottom: 9%; right: 13%; animation-delay: .4s; }
+
+h1 {
+  font-size: clamp(34px, 11vw, 52px);
+  line-height: 1;
+  margin: 12px 0 16px;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 12px 0;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+.eyebrow {
+  font: 700 12px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .62;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 25px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 8px 20px rgba(75,46,93,.15);
+  transition: .2s;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+.primary {
+  background: #30263b;
+  color: white;
+}
+
+.gift {
+  font-size: 72px;
+  background: none;
+  box-shadow: none;
+  padding: 10px;
+  margin: 15px;
+  animation: bounce 1.8s infinite;
+}
+
+.small {
+  font-size: 13px;
+  opacity: .65;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.final {
+  background: linear-gradient(135deg, #fff, #fff0f7);
+  border-radius: 22px;
+  padding: 25px 18px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+#chaos {
+  margin-top: 18px;
+  background: #f0e8ff;
+  color: #493b60;
+}
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.piece {
+  position: absolute;
+  top: -20px;
+  font-size: 20px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110svh) rotate(540deg);
+    opacity: .2;
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+  }
+}
+
+@media(max-height:700px) {
+  .card {
+    min-height: 580px;
+    padding: 25px;
+  }
+
+  .gift {
+    font-size: 60px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="confetti"></div>
+
+<main class="page">
+
+<section class="card">
+
+<span class="sparkle s1">✦</span>
+<span class="sparkle s2">♡</span>
+<span class="sparkle s3">✧</span>
+<span class="sparkle s4">♡</span>
+
+
+<!-- FIRST SCREEN -->
+
+<div class="screen active" id="welcome">
+
+  <div class="eyebrow">
+    A VERY IMPORTANT ANNOUNCEMENT
+  </div>
+
+  <div style="font-size:64px">
+    🎀
+  </div>
+
+  <h1>
+    Hey, Saddy! 👀
+  </h1>
+
+  <p>
+    There is a tiny birthday surprise waiting for you.
+  </p>
+
+  <button class="primary" onclick="show('birthday')">
+    CLICK TO ENTER ✨
+  </button>
+
+  <p class="small">
+    Proceed with caution. It may be cute.
+  </p>
+
+</div>
+
+
+<!-- BIRTHDAY SCREEN -->
+
+<div class="screen" id="birthday">
+
+  <div style="font-size:65px">
+    🎂
+  </div>
+
+  <div class="eyebrow">
+    TODAY'S MAIN CHARACTER
+  </div>
+
+  <h1>
+    HAPPY BIRTHDAY,<br>
+    SADDY! 🥳
+  </h1>
+
+  <p>
+    Yayyy, happy birthday! 💗<br>
+    Stay happy and healthy forever.
+  </p>
+
+  <p class="small">
+    But wait... there is a present.
+  </p>
+
+  <button class="gift"
+          aria-label="Open gift"
+          onclick="openGift()">
+    🎁
+  </button>
+
+  <div class="small">
+    Tap the gift 👆
+  </div>
+
+</div>
+
+
+<!-- SURPRISE SCREEN -->
+
+<div class="screen" id="surprise">
+
+  <div style="font-size:70px">
+    💌
+  </div>
+
+  <div class="eyebrow">
+    SECRET MESSAGE UNLOCKED
+  </div>
+
+  <div class="final">
+
+    <h2>
+      You are very special. 🫶🏻
+    </h2>
+
+    <p>
+      And yes, this little website had to make sure
+      you knew that. ✨
+    </p>
+
+  </div>
+
+  <button id="chaos" onclick="chaos()">
+    DO NOT CLICK THIS 😭
+  </button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<script>
+
+function show(id) {
+
+  document
+    .querySelectorAll('.screen')
+    .forEach(x => x.classList.remove('active'));
+
+  document
+    .getElementById(id)
+    .classList.add('active');
+}
+
+
+function confetti() {
+
+  const box = document.getElementById('confetti');
+
+  const icons = [
+    '✨',
+    '🎉',
+    '💗',
+    '🎀',
+    '⭐',
+    '♡',
+    '🥳'
+  ];
+
+  for (let i = 0; i < 42; i++) {
+
+    const el = document.createElement('span');
+
+    el.className = 'piece';
+
+    el.textContent =
+      icons[Math.floor(Math.random() * icons.length)];
+
+    el.style.left =
+      Math.random() * 100 + 'vw';
+
+    el.style.animationDuration =
+      (2.5 + Math.random() * 2.5) + 's';
+
+    el.style.animationDelay =
+      Math.random() * .7 + 's';
+
+    box.appendChild(el);
+
+    setTimeout(() => el.remove(), 5500);
+  }
+}
+
+
+function openGift() {
+
+  show('surprise');
+
+  confetti();
+}
+
+
+function chaos() {
+
+  confetti();
+
+  const button =
+    document.getElementById('chaos');
+
+  const messages = [
+    'OKAY STOP 😭',
+    'I SAID DON’T CLICK',
+    'FINE. MORE CONFETTI 🎉',
+    'HAPPY BIRTHDAY AGAIN!'
+  ];
+
+  button.textContent =
+    messages[Math.floor(Math.random() * messages.length)];
+
+  document
+    .querySelector('.card')
+    .animate(
+      [
+        { transform: 'rotate(0deg)' },
+        { transform: 'rotate(-1deg)' },
+        { transform: 'rotate(1deg)' },
+        { transform: 'rotate(0deg)' }
+      ],
+      {
+        duration
